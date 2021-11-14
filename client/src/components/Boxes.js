@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 import SmallBox from './SmallBox'
 const Boxes = (props) => {
-    const [selectedArr, setSelectedArr] = useState([]);
+    // const [selectedArr, setSelectedArr] = useState([]);
     return (
         <div>
-            {console.log(selectedArr)}
-            {[...Array(props.rows)].map((x, i) =>
+            {/* {console.log(props)} */}
+            {[...Array(parseInt(props.rows))].map((x, i) =>
             {
                 return (<>
 
-                    {[...Array(props.columns)].map((y, j) =>
+                    {[...Array(parseInt(props.columns))].map((y, j) =>
                 {
-                    return <SmallBox key={'key'+i+j} i={i} j={j} color={props.color} selectedArr = {selectedArr} setSelectedArr={setSelectedArr}/>
+                    return <SmallBox key={'key'+i+j} i={i} j={j} color={props.color} selectedArr = {props.selectedArr} setSelectedArr={props.setSelectedArr}/>
                 })}
                 <br />
                 <br />

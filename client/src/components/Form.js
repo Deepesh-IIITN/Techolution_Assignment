@@ -1,11 +1,18 @@
 import React from "react";
-import { SketchPicker } from 'react-color';
-import ColorPick from "./ColorPicker";
-const Form = () => {
+
+const Form = (props) => {
+  const handleFormData = (e) => {
+    props.setFormData({...props.formData, [e.target.name]:e.target.value});
+  }
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    props.setFormData1(props.formData);
+    props.setTableData([...props.tableData, {category:props.formData.category, color:props.formData.color, points:props.selectedArr}]);
+  }
   return (
     <div className="row">
       <div className="col-md-12">
-        <form className="ml-3 mt-4">
+        <form className="ml-3 mt-4" onSubmit={handleSubmitForm}>
           <div class="form-row">
             <div class="col">
               <label for="rows">Enter Rows</label>
@@ -14,7 +21,10 @@ const Form = () => {
                 type="text"
                 class="form-control"
                 placeholder=""
-                name="rows" 
+                name="rows"
+                value={props.formData.rows}
+                onChange={handleFormData}
+                required
               />
             </div>
             <div class="col">
@@ -25,6 +35,9 @@ const Form = () => {
                 class="form-control"
                 placeholder=""
                 name="columns"
+                value={props.formData.columns}
+                onChange={handleFormData}
+                required
               />
             </div>
             </div>
@@ -37,6 +50,9 @@ const Form = () => {
                 class="form-control"
                 placeholder=""
                 name="category"
+                value={props.formData.category}
+                onChange={handleFormData}
+                required
               />
             </div>
             <div class="col">
@@ -44,6 +60,9 @@ const Form = () => {
               <br/>
               <input
                type="color"
+               name="color"
+               value={props.formData.color}
+               onChange={handleFormData}
               />
             </div>
           </div>
@@ -63,9 +82,9 @@ const Form = () => {
                 name="rows" 
               />
             </div>
-            <div class="col">
+            {/* <div class="col">
              
-            </div>
+            </div> */}
         </div>
           <button type="submit" class="btn btn-info mt-4">
             Save Planogram
