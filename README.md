@@ -14,9 +14,6 @@
 
 <h4>Backend:</h4>
 <p>1. go to the directory "...../backend/server" in terminal</p>
-<p>2. run command "pip install"</p>
-<p>3. then run command "python manage.py makemigrations"</p>
-<p>3. then run command "python manage.py migrate"</p>
-<p>3. then run command "python manage.py runserver"</p>
-<p>4. Wait for sometime automatically a web application will get open on localhost:8000.</p>
+<p>2. then run command "python manage.py runserver"</p>
+<p>3. Wait for sometime automatically a web application will get open on localhost:8000.</p>
 <p>NOTE:- Backend should run on 8000 port.</p>
