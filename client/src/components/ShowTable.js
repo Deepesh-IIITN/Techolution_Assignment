@@ -3,7 +3,7 @@ import React from "react";
 const ShowTable = (props) => {
   return (
     <div className="row mt-5">
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">Category Name</th>
@@ -17,7 +17,7 @@ const ShowTable = (props) => {
 
                 return <tr id={ind} key={ind}>
                     <td>{x.category}</td>
-                    <td><div style={{background:x.color, height:"10px", width:"50px"}}></div></td>
+                    <td><div style={{background:x.color, height:"20px", width:"50px"}}></div></td>
                     <td>{x.points.map((y,i)=>{
                         return ("("+y+") ")
                     })}</td>

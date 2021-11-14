@@ -1,10 +1,8 @@
 # Techolution_Assignment
-<h3>requirement</h3>
+<h3>Requirements</h3>
 <p>1. Node should be installed in your pc.<p>
 
-<br>
-
-<h3>Steps to run application:</h3>
+<h3>Steps To Run Application Locally:</h3>
 <p>1. Clone the project by running "git clone https://github.com/Deepesh-IIITN/Techolution_Assignment.git" this command.</p>
 <p>2. go to the directory "...../client" in terminal</p>
 <p>3. run command "npm install"</p>

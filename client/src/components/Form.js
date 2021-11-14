@@ -6,20 +6,20 @@ const Form = (props) => {
   }
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    props.setFormData1(props.formData);
     props.setTableData([...props.tableData, {category:props.formData.category, color:props.formData.color, points:props.selectedArr}]);
+    // props.setSelectedArr([]);
   }
   return (
     <div className="row">
       <div className="col-md-12">
         <form className="ml-3 mt-4" onSubmit={handleSubmitForm}>
-          <div class="form-row">
-            <div class="col">
+          <div className="form-row">
+            <div className="col">
               <label for="rows">Enter Rows</label>
               <input
                 id="rows"
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder=""
                 name="rows"
                 value={props.formData.rows}
@@ -27,12 +27,12 @@ const Form = (props) => {
                 required
               />
             </div>
-            <div class="col">
+            <div className="col">
               <label for="columns">Enter Columns</label>
               <input
                 id="columns"
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder=""
                 name="columns"
                 value={props.formData.columns}
@@ -41,13 +41,13 @@ const Form = (props) => {
               />
             </div>
             </div>
-            <div class="form-row">
-            <div class="col">
+            <div className="form-row">
+            <div className="col">
               <label for="category">Name a category</label>
               <input
                 id="category"
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder=""
                 name="category"
                 value={props.formData.category}
@@ -55,7 +55,7 @@ const Form = (props) => {
                 required
               />
             </div>
-            <div class="col">
+            <div className="col">
               <label for="color">Color</label>
               <br/>
               <input
@@ -66,18 +66,19 @@ const Form = (props) => {
               />
             </div>
           </div>
-          <button type="submit" class="btn btn-primary mt-4">
+          <button type="submit" className="btn btn-primary mt-4">
             Fix Selection
           </button>
         </form>
-        <form className="mt-5">
-          <div class="form-row">
-            <div class="col">
+        {props.tableData.length > 0 && (
+          <form className="mt-5">
+          <div className="form-row">
+            <div className="col">
               <label for="rows">Enter Planogram Name</label>
               <input
                 id="rows"
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder=""
                 name="rows" 
               />
@@ -86,10 +87,12 @@ const Form = (props) => {
              
             </div> */}
         </div>
-          <button type="submit" class="btn btn-info mt-4">
+          <button type="submit" className="btn btn-info mt-4">
             Save Planogram
           </button>
         </form>
+        )}
+        
       </div>
     </div>
   );

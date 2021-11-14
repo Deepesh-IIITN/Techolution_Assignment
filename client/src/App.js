@@ -12,14 +12,9 @@ function App() {
     category:"",
     color:"#000000",
   });
-  const [formData1, setFormData1] = useState({
-    rows:0,
-    columns:0,
-    category:"",
-    color:"",
-  });
+ 
   const [tableData, setTableData] = useState([]);
-  // console.log(tableData);
+
   const [selectedArr, setSelectedArr] = useState([]);
   return (
     <>
@@ -36,13 +31,11 @@ function App() {
             <p className="planogram-ui-heading mt-5">
               Planogram UI
             </p>
-            <Form formData={formData} setFormData={setFormData} setFormData1={setFormData1} tableData={tableData} setTableData={setTableData} selectedArr={selectedArr}/>
-            {
-              // console.log(formData1)
-            }
+            <Form formData={formData} setFormData={setFormData} tableData={tableData} setTableData={setTableData} selectedArr={selectedArr} setSelectedArr={setSelectedArr}/>
           </div>
         </div>
-        <ShowTable tableData={tableData}/>
+        {tableData.length > 0 && <ShowTable tableData={tableData}/>}
+        
       </div>
     </>
   );

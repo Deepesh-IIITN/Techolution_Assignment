@@ -1,7 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 import SmallBox from './SmallBox'
 const Boxes = (props) => {
-    // const [selectedArr, setSelectedArr] = useState([]);
     return (
         <div>
             {/* {console.log(props)} */}

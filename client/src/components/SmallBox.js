@@ -8,7 +8,7 @@ const SmallBox = (props) => {
         if(selected)
         {
             let arr = props.selectedArr.filter((x)=>{
-                return x != e.target.id;
+                return x !== e.target.id;
             })
             props.setSelectedArr(arr);
         }
