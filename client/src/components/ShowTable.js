@@ -12,7 +12,7 @@ const ShowTable = (props) => {
           </tr>
         </thead>
         <tbody>
-            {console.log(props.tableData)}
+            
             {props.tableData.map((x,ind)=>{
 
                 return <tr id={ind} key={ind}>

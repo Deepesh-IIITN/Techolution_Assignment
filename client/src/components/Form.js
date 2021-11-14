@@ -1,6 +1,9 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from 'axios'
 const Form = (props) => {
+
+  const [planogram, setPlanogram] = useState("");
+
   const handleFormData = (e) => {
     props.setFormData({...props.formData, [e.target.name]:e.target.value});
   }
@@ -9,6 +12,30 @@ const Form = (props) => {
     props.setTableData([...props.tableData, {category:props.formData.category, color:props.formData.color, points:props.selectedArr}]);
     // props.setSelectedArr([]);
   }
+  const handleForm1 = (e) => {
+    setPlanogram(e.target.value);
+  }
+  const handleSubmitForm1 = async (e) => {
+    e.preventDefault();
+    const res = await axios.post('http://localhost:8000/save/', {planogramName: planogram, data: props.tableData}); 
+    if(res.status === 200)
+    {
+      alert("successfully saved");
+      props.setSelectedArr([]);
+      props.setTableData([]);
+      props.setFormData({
+        rows:0,
+        columns:0,
+        category:"",
+        color:"#000000",
+      });
+    }
+    else
+    {
+      alert("failed");
+    }
+  }
+
   return (
     <div className="row">
       <div className="col-md-12">
@@ -71,16 +98,17 @@ const Form = (props) => {
           </button>
         </form>
         {props.tableData.length > 0 && (
-          <form className="mt-5">
+          <form className="mt-5" onSubmit={handleSubmitForm1}>
           <div className="form-row">
             <div className="col">
-              <label for="rows">Enter Planogram Name</label>
+              <label for="planogramName">Enter Planogram Name</label>
               <input
-                id="rows"
+                id="planogramName"
                 type="text"
                 className="form-control"
                 placeholder=""
-                name="rows" 
+                name="planogramName" 
+                onChange={handleForm1}
               />
             </div>
             {/* <div class="col">

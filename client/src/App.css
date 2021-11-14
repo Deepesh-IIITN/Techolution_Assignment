@@ -1,3 +1,22 @@
+
+.link-button{
+  position: fixed;
+  right:10px;
+  bottom: 10px;
+  background: #d9ff81;
+  padding: 10px 30px;
+}
+
+.planogram-box{
+  border: 1px solid gray;
+  margin: 20px 0px;
+  padding: 20px;
+}
+
+.planogram-box h6 span {
+  color: #878a91;
+}
+
 .small-box{
   height: 100px;
   background-color: rgb(234, 234, 243);
