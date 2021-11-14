@@ -18,7 +18,7 @@ const MyData = () => {
         <div className="container mt-5">
             <div className="row">
                 {
-                    data.map((x,i)=>{
+                    data && data.map((x,i)=>{
                         return(
                         <div className="col-md-12 planogram-box">
                             <h6>Planogram Name: <span>{x.planogramName}</span></h6>
